@@ -1,0 +1,18 @@
+{
+  "name": "bp-premiums",
+  "description": "BP Premiums is an addon for monetizing social networks. Charge users a premium for accessing features on your network.",
+  "license": "GPLv2",
+  "authors": [
+    "SuitePlugins"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

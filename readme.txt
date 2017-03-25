@@ -3,8 +3,8 @@ Contributors: suiteplugins
 Donate link: http://www.suiteplugins.com/
 Tags: buddypress, buddypress groups, groups, social network, buddypress monetize, buddypress money
 Requires at least: 3.2
-Tested up to: 4.3
-Stable tag: 1.0.0
+Tested up to: 4.7.3
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,9 +22,7 @@ Take your social network to the next level, check out the addons available to en
 
 * Users can purchase packages to create groups
 
-* After each pruchase, users receive a quota of groups they can create.
-
-= Addons Available =
+* After each purchase, users receive a quota of groups they can create.
 
 **Premium Group Access** - Require users to pay to join private groups
 
@@ -38,9 +36,9 @@ Take your social network to the next level, check out the addons available to en
 
 * Site members are restricted from browsing another user's media files unless access is purchased
 
-* Requires [rtMedia](https://wordpress.org/plugins/buddypress-media/) 
+* Requires [rtMedia](https://wordpress.org/plugins/buddypress-media/)
 
-* Available Here [rtMedia Addon](https://suiteplugins.com/downloads/rtmedia-for-buddypress-premiums/) 
+* Available Here [rtMedia Addon](https://suiteplugins.com/downloads/rtmedia-for-buddypress-premiums/)
 
 
 **BuddyDrive** - Force users to purchase access to upload and/or browse files by the BuddyDrive Plugin
@@ -53,11 +51,11 @@ Take your social network to the next level, check out the addons available to en
 
 * Requires [BuddyDrive](https://wordpress.org/plugins/buddydrive/)
 
-* Available Here [BuddyDrive Addon](https://suiteplugins.com/downloads/buddydrive-for-buddypress-premiums/) 
+* Available Here [BuddyDrive Addon](https://suiteplugins.com/downloads/buddydrive-for-buddypress-premiums/)
 
-**Member Types (Coming Soon)** 
+**Member Types (Coming Soon)**
 
-**BP Gifts (Coming Soon)**  
+**BP Gifts (Coming Soon)**
 
 
 = Possible Social Network User Cases =
@@ -87,7 +85,7 @@ English (United States)
 
 1. Visit 'Plugins > Add New'
 2. Search for 'BP Premiums'
-3. Activate BP Premiums from your Plugins page. 
+3. Activate BP Premiums from your Plugins page.
 
 = From WordPress.org =
 
@@ -111,7 +109,7 @@ Support is provided at [SuitePlugins](https://suiteplugins.com/)
 
 = Can the plugin be integrated with other third-party plugins? =
 
-Yes! Any developer can create a new addon that will work with other plugins. Checkout some of our addons here [Addons](https://suiteplugins.com/downloads/category/bp-premiums/)
+Yes! Any developer can create a new addon that will work with other plugins.
 
 == Screenshots ==
 
@@ -128,5 +126,12 @@ Yes! Any developer can create a new addon that will work with other plugins. Che
 = 1.0.0 =
 Initial Release
 
+= 1.2.0 =
+* Revamped code structure
+* Included 3 modules that extends BP Premiums
+
 == Upgrade Notice ==
 = Initial Release =
+
+= 1.2.0 =
+* Code revamped and modules included

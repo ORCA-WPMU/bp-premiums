@@ -4,14 +4,14 @@
  *
  * @since 1.0.0
  */
-class SPBPP_GroupAccess_Module{
+class BP_Premiums_Group_Access_Module{
 	/**
 	 * @var string field_name
 	 * @since 1.0.0
 	 */
 	 public $field_name = '_spbpp_premium_groups_field';
 	/**
-	 * SPBPP_GroupAccess_Module initiate
+	 * BP_Premiums_Group_Access_Module initiate
 	 * @since 1.0.0
 	 */
 	public function __construct(){
@@ -32,7 +32,7 @@ class SPBPP_GroupAccess_Module{
 		// Create a dropdown of groups to select from
 		spbp_groups_dropdown(
 		  array(
-		   'name'			   => $this->field_name.'[]',	
+		   'name'			   => $this->field_name.'[]',
 		   'id'                => $this->field_name,
 		   'label'             => __( 'Premium Groups Access', 'sp-bp-premiums' ),
 		   'placeholder'       => __( 'Enter # of groups', 'sp-bp-premiums' ),
@@ -47,13 +47,13 @@ class SPBPP_GroupAccess_Module{
 	 * @param	array	$post_id
 	 * @since	1.0.0
 	 */
-	public function save_premium_groups($id, $post){
+	public function save_premium_groups( $id, $post ) {
 		//check if any value was sent
-		if(!empty($_POST[$this->field_name])){
-			update_post_meta($id, $this->field_name, $_POST[$this->field_name]);
+		if( ! empty( $_POST[ $this->field_name ] ) ) {
+			update_post_meta( $id, $this->field_name, $_POST[ $this->field_name ] );
 		}else{
 			//if no value was sent, let's delete any data if user wants to
-			delete_post_meta($id, $this->field_name);
+			delete_post_meta( $id, $this->field_name );
 		}
 	}
 	/**
@@ -66,13 +66,13 @@ class SPBPP_GroupAccess_Module{
 	 *
 	 * @since	1.0.0
 	 */
-	public function grant_access($products=array(), $user_id=0, $order_id=0, $order=array()){
-		if(!empty($products)):
-			foreach($products as $product){
-				$groups = get_post_meta($product['product_id'], $this->field_name, true);
+	public function grant_access( $products = array(), $user_id = 0, $order_id = 0, $order=array() ) {
+		if ( ! empty( $products ) ) :
+			foreach ( $products as $product ) {
+				$groups = get_post_meta( $product['product_id'], $this->field_name, true );
 				//
-				if(!empty($groups) && is_array($groups)){
-					foreach($groups as $key=>$group_id){
+				if ( ! empty( $groups ) && is_array( $groups ) ) {
+					foreach ( $groups as $key=>$group_id ) {
 						groups_join_group( $group_id, $user_id );
 					}
 				}
@@ -85,7 +85,7 @@ class SPBPP_GroupAccess_Module{
  * Load class
  * @since 1.0.0
  */
-function spbpp_run_group_access(){
-	$group_access = new SPBPP_GroupAccess_Module();
+function bp_premium_module_group_access(){
+	$group_access = new BP_Premiums_Group_Access_Module();
 }
-add_action('spbpp_loaded', 'spbpp_run_group_access');
+add_action( 'bp_premiums_loaded', 'bp_premium_module_group_access' );

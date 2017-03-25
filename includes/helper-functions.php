@@ -17,11 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param array $field
  */
 function spbp_groups_dropdown( $field ) {
-	if(!bp_is_active('groups')){
+	if ( ! bp_is_active( 'groups' ) ) {
 		return;
 	}
 	global $thepostid, $post;
-	
+
 	$thepostid              = empty( $thepostid ) ? $post->ID : $thepostid;
 	$field['class']         = isset( $field['class'] ) ? $field['class'] : 'select short';
 	$field['style']         = isset( $field['style'] ) ? $field['style'] : '';
@@ -34,35 +34,34 @@ function spbp_groups_dropdown( $field ) {
 
 	if ( ! empty( $field['custom_attributes'] ) && is_array( $field['custom_attributes'] ) ) {
 
-		foreach ( $field['custom_attributes'] as $attribute => $value ){
+		foreach ( $field['custom_attributes'] as $attribute => $value ) {
 			$custom_attributes[] = esc_attr( $attribute ) . '="' . esc_attr( $value ) . '"';
 		}
 	}
-	
+
 	echo '<p class="form-field ' . esc_attr( $field['id'] ) . '_field ' . esc_attr( $field['wrapper_class'] ) . '"><label for="' . esc_attr( $field['id'] ) . '">' . wp_kses_post( $field['label'] ) . '</label><select id="' . esc_attr( $field['id'] ) . '" name="' . esc_attr( $field['name'] ) . '" class="' . esc_attr( $field['class'] ) . '" style="' . esc_attr( $field['style'] ) . '" ' . implode( ' ', $custom_attributes ) . '>';
-	
+
 	$args = array(
-		'per_page' => 10000,
-		'type'		=> 'alphabetic'
+		'per_page' 	=> 10000,
+		'type'		=> 'alphabetic',
 	);
 
 	$field_options = groups_get_groups( $args );
-	if(!empty($field_options)):
-
-	foreach ( $field_options['groups'] as $group) {
-		$selected = '';
-		if(!empty($field['value']) && is_array($field['value'])){
-			if(in_array($group->id, $field['value'])):
-				$selected = 'selected="selected"';
-			endif;
-		}elseif(!empty($field['value']) && !is_array($field['value'])){
-			 if(esc_attr( $field['value'] ) == $group->id ):
-			 	$selected = 'selected="selected"';
-			 endif;
+	if ( ! empty( $field_options ) ) :
+		foreach ( $field_options['groups'] as $group ) {
+			$selected = '';
+			if ( ! empty( $field['value'] ) && is_array( $field['value'] ) ) {
+				if ( in_array( $group->id, $field['value'] ) ) :
+					$selected = 'selected="selected"';
+				endif;
+			} elseif ( ! empty( $field['value'] ) && ! is_array( $field['value'] ) ) {
+				if ( esc_attr( $field['value'] ) == $group->id ) :
+					$selected = 'selected="selected"';
+				endif;
+			}
+			echo '<option value="' . (int) $group->id . '" ' . $selected . '>' . esc_html( $group->name ) . '</option>';
 		}
-		echo '<option value="' . (int) $group->id . '" ' .$selected . '>' . esc_html( $group->name ) . '</option>';
-	}
-	
+
 	endif;
 
 	echo '</select> ';
@@ -99,7 +98,7 @@ function spbp_groups_checkbox( $field ) {
 
 	if ( ! empty( $field['custom_attributes'] ) && is_array( $field['custom_attributes'] ) ) {
 
-		foreach ( $field['custom_attributes'] as $attribute => $value ){
+		foreach ( $field['custom_attributes'] as $attribute => $value ) {
 			$custom_attributes[] = esc_attr( $attribute ) . '="' . esc_attr( $value ) . '"';
 		}
 	}
@@ -123,9 +122,9 @@ function spbp_groups_checkbox( $field ) {
  *
  * @param string $title
  */
-function sbbp_section_title($title=''){
+function sbbp_section_title( $title = '' ) {
 	global $thepostid, $post;
-	echo '<h3 class="spbpp-section-title">'.$title.'</h3>';
+	echo '<p><strong class="spbpp-section-title">' . $title . '</strong></p>';
 }
 
 /**
@@ -133,7 +132,7 @@ function sbbp_section_title($title=''){
  *
  * @param string $description
  */
-function sbbp_product_description($description=''){
+function sbbp_product_description( $description = '' ) {
 	global $thepostid, $post;
-	echo '<p class="description">'.$description.'</p>';
+	echo '<p class="description">' . $description . '</p>';
 }

@@ -1,0 +1,18 @@
+{
+  "generator-plugin-wp": {
+    "name": "BP Premiums",
+    "homepage": "https://suiteplugins.com",
+    "description": "BP Premiums is an addon for monetizing social networks. Charge users a premium for accessing features on your network.",
+    "version": "1.2.0",
+    "author": "SuitePlugins",
+    "authoremail": "contact@suiteplugins.com",
+    "authorurl": "https://suiteplugins.com",
+    "license": "GPLv2",
+    "slug": "bp-premiums",
+    "classname": "BP_Premiums",
+    "classprefix": "BP_Premiums_",
+    "prefix": "bp_premiums",
+    "year": 2017,
+    "currentVersionWP": "4.4"
+  }
+}
